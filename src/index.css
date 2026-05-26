@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Georgia", serif;
+  --font-serif: "Georgia", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-coastal-teal: #3d5a4c;
+  --color-coastal-teal-dark: #2d4338;
+  --color-coastal-teal-light: #ebf0ec;
+  --color-sand-amber: #1a1a1a;
+  --color-sand-amber-dark: #000000;
+  --color-sand-cream: #ffffff;
+  --color-sand-bg: #f9f7f2;
+  --color-ocean-blue: #3d5a4c;
+  
+  --color-ink: #1a1a1a;
+  --color-paper: #f9f7f2;
+}
+
+body {
+  background-color: #f9f7f2;
+  font-family: var(--font-sans);
+  color: #1a1a1a;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+

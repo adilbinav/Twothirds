@@ -1,0 +1,6 @@
+{
+  "name": "Two-Thirds Community Foundation",
+  "description": "Official platform for the Two-Thirds Community Foundation to manage donations, post volunteer opportunities, and share recent impact stories for coastal and marginalized communities in Kerala.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

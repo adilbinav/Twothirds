@@ -1,0 +1,133 @@
+{
+  "entities": {
+    "Donation": {
+      "title": "Donation Record",
+      "description": "A formal financial contribution logged in the system",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "donorName": { "type": "string" },
+        "email": { "type": "string" },
+        "amount": { "type": "number" },
+        "date": { "type": "string" },
+        "campaignId": { "type": "string" },
+        "isAnonymous": { "type": "boolean" },
+        "message": { "type": "string" },
+        "certificateCode": { "type": "string" }
+      },
+      "required": ["donorName", "email", "amount", "date", "campaignId", "isAnonymous"]
+    },
+    "VolunteerOpportunity": {
+      "title": "Volunteer Opportunity",
+      "description": "A grassroots volunteer opening under one of the five focus pillars",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "focusArea": { "type": "string" },
+        "location": { "type": "string" },
+        "requirements": { "type": "array" },
+        "duration": { "type": "string" },
+        "spotsAvailable": { "type": "number" },
+        "status": { "type": "string" },
+        "appliesCount": { "type": "number" },
+        "postedDate": { "type": "string" }
+      },
+      "required": ["title", "description", "focusArea", "location", "requirements", "duration", "spotsAvailable", "status", "appliesCount", "postedDate"]
+    },
+    "VolunteerApplication": {
+      "title": "Volunteer Application",
+      "description": "An applicant's registration form for a volunteer opportunity",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "opportunityId": { "type": "string" },
+        "opportunityTitle": { "type": "string" },
+        "applicantName": { "type": "string" },
+        "applicantEmail": { "type": "string" },
+        "applicantPhone": { "type": "string" },
+        "skills": { "type": "string" },
+        "comments": { "type": "string" },
+        "appliedAt": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["opportunityId", "opportunityTitle", "applicantName", "applicantEmail", "applicantPhone", "skills", "comments", "appliedAt", "status"]
+    },
+    "ImpactStory": {
+      "title": "Impact Story",
+      "description": "An educational or community victory testimonial posted by the organizers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "content": { "type": "string" },
+        "category": { "type": "string" },
+        "author": { "type": "string" },
+        "date": { "type": "string" },
+        "likes": { "type": "number" },
+        "imageTheme": { "type": "string" },
+        "readTime": { "type": "string" },
+        "imageUrl": { "type": "string" }
+      },
+      "required": ["title", "description", "content", "category", "author", "date", "likes", "imageTheme", "readTime"]
+    },
+    "GrowthGoal": {
+      "title": "Growth Goal",
+      "description": "Financial and operational milestone goals for transparency tracking",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "targetAmount": { "type": "number" },
+        "currentAmount": { "type": "number" },
+        "timeline": { "type": "string" },
+        "objectives": { "type": "array" },
+        "details": { "type": "string" }
+      },
+      "required": ["title", "targetAmount", "currentAmount", "timeline", "objectives", "details"]
+    },
+    "ProofPhoto": {
+      "title": "Proof Photo Record",
+      "description": "A structural image showing verified coastal impact, mangrove planting, or educational hub activities",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "category": { "type": "string" },
+        "uploadedAt": { "type": "string" },
+        "uploaderName": { "type": "string" }
+      },
+      "required": ["title", "description", "imageUrl", "category", "uploadedAt", "uploaderName"]
+    }
+  },
+  "firestore": {
+    "donations": {
+      "schema": "Donation",
+      "description": "Collection storing all structural donation history entries"
+    },
+    "opportunities": {
+      "schema": "VolunteerOpportunity",
+      "description": "Active volunteer openings in the coastal hamlets"
+    },
+    "applications": {
+      "schema": "VolunteerApplication",
+      "description": "Submitted application forms from volunteers"
+    },
+    "stories": {
+      "schema": "ImpactStory",
+      "description": "Village impact stories and editorial chronicles"
+    },
+    "growthGoals": {
+      "schema": "GrowthGoal",
+      "description": "Fundraising campaigns and annual operational milestones/objectives"
+    },
+    "proofGallery": {
+      "schema": "ProofPhoto",
+      "description": "Live photograph proof stream illustrating active coastal field accomplishments"
+    }
+  }
+}
